@@ -1,12 +1,12 @@
 [package]
-name = "puzzle_1"
+name = "puzzle_1a"
 version.workspace = true
 authors.workspace = true
-description = "Puzzle 1"
+description = "Puzzle 1A"
 edition.workspace = true
 
 [[bin]]
-name = "puzzle_1"
-path = "src/puzzle_1.rs"
+name = "puzzle_1a"
+path = "src/puzzle_1a.rs"
 
 [dependencies]
