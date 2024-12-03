@@ -15,4 +15,4 @@ rust-version = "1.83.0"
 [workspace.lints.clippy]
 
 [workspace.dependencies]
-
+nom = "7"
