@@ -1,0 +1,18 @@
+[workspace]
+resolver = '2'
+members = [
+    "crates/*",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Alexander Ambrose"]
+rust-version = "1.83.0"
+
+[workspace.lints.rust]
+
+[workspace.lints.clippy]
+
+[workspace.dependencies]
+

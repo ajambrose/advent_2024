@@ -1,0 +1,10 @@
+[package]
+name = "puzzle_1"
+version.workspace = true
+authors.workspace = true
+description = "Puzzle 1"
+edition.workspace = true
+
+[[bin]]
+name = "puzzle_1"
+path = "src/puzzle_1.rs"
