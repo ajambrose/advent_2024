@@ -1,5 +1,10 @@
 use std::fs;
 
+fn is_unsafe_move(greater: i64, lesser: i64) -> bool {
+    let diff = greater - lesser;
+    diff < 1 || diff > 3
+}
+
 fn is_safe(report: &[i64]) -> bool {
     if report.len() == 1 {
         return true;
@@ -8,8 +13,7 @@ fn is_safe(report: &[i64]) -> bool {
     if report[0] < report[1] {
         // increasing
         for i in 1..report.len() {
-            let diff = report[i] - report[i - 1];
-            if diff < 1 || diff > 3 {
+            if is_unsafe_move(report[i], report[i-1]) {
                 return false;
             }
         }
@@ -17,8 +21,7 @@ fn is_safe(report: &[i64]) -> bool {
     } else {
         // decreasing
         for i in 1..report.len() {
-            let diff = report[i - 1] - report[i];
-            if diff < 1 || diff > 3 {
+            if is_unsafe_move(report[i-1], report[i]) {
                 return false;
             }
         }
