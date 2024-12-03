@@ -8,3 +8,5 @@ edition.workspace = true
 [[bin]]
 name = "puzzle_1"
 path = "src/puzzle_1.rs"
+
+[dependencies]
