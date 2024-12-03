@@ -1,4 +1,7 @@
-use std::{collections::{hash_map::Entry, HashMap}, fs};
+use std::{
+    collections::{hash_map::Entry, HashMap},
+    fs,
+};
 
 fn calc_similarity(left: &mut [i64], right: &HashMap<i64, u64>) -> u64 {
     left.iter().fold(0, |total, &n| {
@@ -10,7 +13,10 @@ fn main() {
     let args: Vec<_> = std::env::args().collect();
     let input = &args[1];
     let data = fs::read_to_string(input).unwrap();
-    let ints: Vec<_> = data.split_ascii_whitespace().map(|s| str::parse::<i64>(s).unwrap()).collect();
+    let ints: Vec<_> = data
+        .split_ascii_whitespace()
+        .map(|s| str::parse::<i64>(s).unwrap())
+        .collect();
     let mut left = vec![];
     let mut right = HashMap::new();
     for s in ints.chunks_exact(2) {
