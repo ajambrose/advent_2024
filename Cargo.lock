@@ -46,3 +46,10 @@ version = "0.1.0"
 dependencies = [
  "nom",
 ]
+
+[[package]]
+name = "puzzle_3b"
+version = "0.1.0"
+dependencies = [
+ "nom",
+]
