@@ -49,14 +49,9 @@ fn enumerate_idxs(i: usize, j: usize, max: usize) -> Vec<Vec<(usize, usize)>> {
 
 fn is_xmas(text: &[String], idxs: &[(usize, usize)]) -> bool {
     let xmas = ['M', 'A', 'S'];
-    idxs.iter().zip(xmas.iter()).all(|(&(i, j), &c)| {
-        // println!(
-        //     "Compare {}({i}) to {}({j})",
-        //     text[i].chars().nth(j).unwrap(),
-        //     c
-        // );
-        text[i].chars().nth(j).unwrap() == c
-    })
+    idxs.iter()
+        .zip(xmas.iter())
+        .all(|(&(i, j), &c)| text[i].chars().nth(j).unwrap() == c)
 }
 
 fn find_xmas(text: &[String]) -> u64 {
@@ -67,9 +62,7 @@ fn find_xmas(text: &[String]) -> u64 {
             if c != 'X' {
                 continue;
             }
-            // println!("Found X at {i}, {j}");
             let idx_list = enumerate_idxs(i, j, str_len);
-            // println!("idx_list is {idx_list:?}");
             for idxs in idx_list {
                 total += is_xmas(text, idxs.as_slice()) as u64;
             }

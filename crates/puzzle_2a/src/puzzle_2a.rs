@@ -13,7 +13,7 @@ fn is_safe(report: &[i64]) -> bool {
     if report[0] < report[1] {
         // increasing
         for i in 1..report.len() {
-            if is_unsafe_move(report[i], report[i-1]) {
+            if is_unsafe_move(report[i], report[i - 1]) {
                 return false;
             }
         }
@@ -21,7 +21,7 @@ fn is_safe(report: &[i64]) -> bool {
     } else {
         // decreasing
         for i in 1..report.len() {
-            if is_unsafe_move(report[i-1], report[i]) {
+            if is_unsafe_move(report[i - 1], report[i]) {
                 return false;
             }
         }
