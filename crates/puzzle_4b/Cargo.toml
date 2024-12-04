@@ -1,0 +1,13 @@
+[package]
+name = "puzzle_4b"
+version.workspace = true
+authors.workspace = true
+description = "Puzzle 4B"
+edition.workspace = true
+
+[[bin]]
+name = "puzzle_4b"
+path = "src/puzzle_4b.rs"
+
+[dependencies]
+nom = { workspace = true }
