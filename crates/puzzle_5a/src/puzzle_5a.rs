@@ -27,9 +27,9 @@ fn parse_file(file: &str) -> (HashMap<u64, HashSet<u64>>, Vec<Vec<u64>>) {
 fn solve(rules: &HashMap<u64, HashSet<u64>>, pages: &Vec<Vec<u64>>) -> u64 {
     let mut total = 0;
     'page: for page in pages {
-        for (i, n) in page.iter().skip(1).enumerate() {
+        for (i, n) in page.iter().enumerate() {
             if let Some(rule) = rules.get(n) {
-                for j in (0..=i).rev() {
+                for j in (0..i).rev() {
                     if rule.get(&page[j]).is_some() {
                         continue 'page;
                     }
