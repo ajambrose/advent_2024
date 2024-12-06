@@ -16,3 +16,4 @@ rust-version = "1.83.0"
 
 [workspace.dependencies]
 nom = "7"
+rayon = "1"

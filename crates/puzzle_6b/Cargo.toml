@@ -11,3 +11,4 @@ path = "src/puzzle_6b.rs"
 
 [dependencies]
 nom = { workspace = true }
+rayon = { workspace = true }

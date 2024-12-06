@@ -1,3 +1,4 @@
+use rayon::prelude::*;
 use std::{
     collections::HashSet,
     fmt::{Formatter, Write},
@@ -174,15 +175,23 @@ fn main() {
     let data = fs::read_to_string(input).unwrap();
     let (tiles, i, j) = parse_file(&data);
     // lol how bad could this be
-    let mut total = 0;
-    for oi in 0..tiles.len() {
-        for oj in 0..tiles[oi].len() {
-            if let Space::Empty = &tiles[oi][oj] {
+    let work: Vec<_> = tiles
+        .iter()
+        .enumerate()
+        .map(|(i, v)| std::iter::repeat(i).zip(v.iter().enumerate()))
+        .flatten()
+        .collect();
+    let total: u64 = work
+        .into_par_iter()
+        .map(|(oi, (oj, s))| {
+            if let Space::Empty = s {
                 let mut new_tiles = tiles.clone();
                 new_tiles[oi][oj] = Space::Obstacle;
-                total += solve(&mut new_tiles, i, j) as u64;
+                solve(&mut new_tiles, i, j) as u64
+            } else {
+                0u64
             }
-        }
-    }
+        })
+        .sum();
     println!("{}", total);
 }
