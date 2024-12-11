@@ -1,0 +1,13 @@
+[package]
+name = "puzzle_11b"
+version.workspace = true
+authors.workspace = true
+description = "Puzzle 11B"
+edition.workspace = true
+
+[[bin]]
+name = "puzzle_11b"
+path = "src/puzzle_11b.rs"
+
+[dependencies]
+hashbrown = { workspace = true }

@@ -15,5 +15,7 @@ rust-version = "1.83.0"
 [workspace.lints.clippy]
 
 [workspace.dependencies]
+either = "1"
+hashbrown = "0.15"
 nom = "7"
 rayon = "1"
