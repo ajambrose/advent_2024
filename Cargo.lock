@@ -134,6 +134,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "puzzle_14b"
+version = "0.1.0"
+dependencies = [
+ "nom",
+ "rayon",
+]
+
+[[package]]
 name = "puzzle_1a"
 version = "0.1.0"
 
